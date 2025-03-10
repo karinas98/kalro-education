@@ -3,6 +3,7 @@ import BricklehurstImg from "@/app/assets/bricklehurst-manor.jpg";
 import BurgessImg from "@/app/assets/burgess-hill.png";
 import FarnboroughImg from "@/app/assets/farnborough.jpeg";
 import StoneygateImg from "@/app/assets/stoneygate-leicester.jpg";
+import Image from "next/image";
 
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -82,7 +83,7 @@ export default function HeroCarousel() {
       {/* Carousel Section */}
       <div className="relative w-50 flex items-center">
         <div className="relative overflow-hidden">
-          <img
+          <Image
             src={slides[currentIndex].image.src}
             className="block w-full transition-opacity duration-500"
             alt="Property"
