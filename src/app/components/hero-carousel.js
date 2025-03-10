@@ -85,6 +85,8 @@ export default function HeroCarousel() {
         <div className="relative overflow-hidden">
           <Image
             src={slides[currentIndex].image.src}
+            width="200"
+            height="60"
             className="block w-full transition-opacity duration-500"
             alt="Property"
           />
