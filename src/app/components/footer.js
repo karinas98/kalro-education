@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="w-full  bg-[#FBFBFB] py-20 py-8 px-6 md:px-12 flex justify-between items-end">
       {/* Left Side - Logo and Contact Info */}
 
-      <div className="flex flex-col pl-[80px]  space-x-4">
+      <div className="flex flex-col lg:pl-[80px]  space-x-4">
         <Image src={Logo} alt="Kalro Education Logo" width={250} />
         <p className="text-[16px] font-light">
           <a href="mailto:Krish@kalrocapital.com" className="hover:underline">
