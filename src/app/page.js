@@ -188,7 +188,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className=" pr-[20px] md:pr-[80px] lg:w-[60%] h-full w-[90%] pt-32 pb-32 md:pb-10">
+      <section className=" pr-[20px] md:pr-[80px] lg:w-[60%] h-full w-[90%] pt-20 md:pt-32 pb-32 md:pb-10">
         <div>
           <h2 className=" pl-[20px] lg:pl-[160px] text-[32px] text-[#001C5A] font-bold">
             Think Your Property Could be Suited to Education Use? Here’s Why You
@@ -201,7 +201,7 @@ export default function Home() {
                 Expertise in Education Real Estate
               </h3>
             </div>
-            <p className="pl-[100px] lg:pl-[200px] font-light text-[18px]">
+            <p className="pl-[90px] lg:pl-[200px] font-light text-[18px]">
               The UK’s education sector is one of the strongest in the world,
               and we understand what education providers need to operate
               successfully. We help education providers in the SEND sector grow
@@ -215,7 +215,7 @@ export default function Home() {
                 Fast & Reliable Transactions
               </h3>
             </div>
-            <p className="pl-[100px] lg:pl-[200px] font-light text-[18px]">
+            <p className="pl-[90px] lg:pl-[200px] font-light text-[18px]">
               With capital and experience, we efficiently acquire and repurpose
               sites, providing property owners with a hassle-free exit strategy.
             </p>
@@ -227,7 +227,7 @@ export default function Home() {
                 Sustainable & Community-Focused Developments
               </h3>
             </div>
-            <p className="pl-[100px] lg:pl-[200px] font-light text-[18px]">
+            <p className="pl-[90px] lg:pl-[200px] font-light text-[18px]">
               Our projects create meaningful impact by supporting students,
               communities, and long-term education growth.
             </p>

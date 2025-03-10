@@ -3,7 +3,7 @@ import Image from "next/image";
 import Logo from "@/app/assets/kalro-black-logo.png";
 const Footer = () => {
   return (
-    <footer className="w-full  bg-[#FBFBFB] py-20 py-8 px-6 md:px-12 flex-col md:flex-row flex justify-between items-end">
+    <footer className="w-full  bg-[#FBFBFB] py-20 py-8 px-4 md:px-12 flex-col md:flex-row flex justify-between items-end">
       {/* Left Side - Logo and Contact Info */}
 
       <div className="flex flex-col lg:pl-[80px]  space-x-4">
@@ -20,7 +20,7 @@ const Footer = () => {
         </p>
       </div>
 
-      <div className="text-right pr-[80px] text-[16px]">
+      <div className="text-left md:text-right pr-[80px] text-[16px]">
         <p>51 Harley Street, London, W1G 8QQ</p>
       </div>
     </footer>
