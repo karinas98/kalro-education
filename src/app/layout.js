@@ -16,9 +16,6 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ldyh_AqAAAAADQbK0ZBnt6pgTfzJSzC7Tfnj1c-"></script>
-      </head>
       <body className={inter.variable}>{children}</body>
     </html>
   );
