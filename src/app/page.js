@@ -16,7 +16,7 @@ export default function Home() {
       <div className="relative bg-[url('./assets/hero-image.jpg')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black opacity-75 z-10"></div>
         <div className="absolute top-6 left-6 md:top-10 md:left-16 z-20">
-          <Image src={logo} alt="Kalro Education Logo" width={180} />
+          <Image src={logo} alt="Kalro Education Logo" width={220} />
         </div>
         <section className="h-screen flex flex-col justify-center px-6 md:px-20 relative z-20">
           <h1 className="text-3xl md:text-5xl lg:text-[65px] text-white font-extralight w-full md:w-[80%] lg:w-[65%]">
@@ -227,7 +227,7 @@ export default function Home() {
                 Sustainable & Community-Focused Developments
               </h3>
             </div>
-            <p className="pl-[100px] lg:pl-[200px]font-light text-[18px]">
+            <p className="pl-[100px] lg:pl-[200px] font-light text-[18px]">
               Our projects create meaningful impact by supporting students,
               communities, and long-term education growth.
             </p>
