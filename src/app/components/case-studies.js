@@ -13,10 +13,12 @@ import Napier1 from "@/app/assets/farnborough2.jpeg";
 import Napier2 from "@/app/assets/farnborough3.jpeg";
 import Hambrooke1 from "@/app/assets/hambrook.jpeg";
 import Hambrooke2 from "@/app/assets/hambrook2.jpeg";
-import Hambrooke3 from "@/app/assets/hambrook4.jpeg";
+import Hambrooke3 from "@/app/assets/hambrook3.jpeg";
+import Hambrooke4 from "@/app/assets/hambrook4.jpeg";
 
 const caseStudies = [
   {
+    id: "bricklehurst",
     number: "1",
     title: "Bricklehurst School, Wadhurst",
     description:
@@ -31,13 +33,15 @@ const caseStudies = [
     ],
   },
   {
+    id: "hambrook",
     number: "2",
     title: "Hambrook School, Burgess Hill",
     description:
       "We worked very closely with West Sussex County Council to repurpose this former adult education facility into a high quality SEND school. The Property was then acquired from the Council, who benefited from the significant sale proceeds which were then re-invested elsewhere in the Borough. ",
-    images: [BurgessImg, Hambrooke1, Hambrooke2, Hambrooke3],
+    images: [BurgessImg, Hambrooke1, Hambrooke2, Hambrooke3, Hambrooke4],
   },
   {
+    id: "napier",
     number: "3",
     title: "Napier School, Farnborough",
     description:
@@ -45,6 +49,7 @@ const caseStudies = [
     images: [FarnboroughImg, Napier1, Napier2],
   },
   {
+    id: "stoneygate",
     number: "4",
     title: "Stoneygate School, Leicester",
     description:
@@ -123,7 +128,11 @@ const CaseStudies = () => {
       </h2>
       <div className="space-y-12">
         {caseStudies.map((study) => (
-          <div key={study.number} className="flex items-start space-x-6">
+          <div
+            id={study.id}
+            key={study.number}
+            className="flex items-start space-x-6"
+          >
             <span className="text-8xl font-extralight text-gray-300">
               {study.number}
             </span>

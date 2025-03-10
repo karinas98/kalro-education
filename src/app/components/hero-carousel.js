@@ -11,22 +11,22 @@ export default function HeroCarousel() {
     {
       image: BricklehurstImg,
       title: "BRICKLEHURST MANOR, WADHURST",
-      link: "#",
+      link: "#bricklehurst",
     },
     {
       image: BurgessImg,
       title: "HAMBROOK SCHOOL, BURGESS HILL",
-      link: "#",
+      link: "#hambrook",
     },
     {
       image: FarnboroughImg,
       title: "NAPIER SCHOOL, FARNBOROUGH",
-      link: "#",
+      link: "#napier",
     },
     {
       image: StoneygateImg,
       title: "STONEYGATE SCHOOL, LEICESTER",
-      link: "#",
+      link: "#stoneygate",
     },
   ];
 
