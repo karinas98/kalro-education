@@ -1,11 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Napier1 from "@/app/assets/farnborough2.jpeg";
+import Napier2 from "@/app/assets/farnborough3.jpeg";
+import FarnboroughImg from "@/app/assets/farnborough.jpeg";
 
-const images = [
-  "/images/napier-1.jpg",
-  "/images/napier-2.jpg",
-  "/images/napier-3.jpg",
-];
+const images = [Napier1, Napier2, FarnboroughImg];
 
 const SuccessStory = () => {
   return (
@@ -33,18 +32,22 @@ const SuccessStory = () => {
         </div>
 
         {/* Right Section - Image Grid */}
-        <div className="grid grid-cols-2 gap-2">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
           {images.map((src, index) => (
-            <Image
+            <div
               key={index}
-              src={src}
-              alt={`Napier School ${index + 1}`}
-              width={300}
-              height={200}
-              className={`rounded-lg shadow-md ${
-                index === 2 ? "col-span-2" : ""
+              className={`rounded-lg shadow-md overflow-hidden ${
+                index === 2 ? "col-span-2 row-span-1" : ""
               }`}
-            />
+            >
+              <Image
+                src={src}
+                alt={`Napier School ${index + 1}`}
+                width={300}
+                height={250}
+                className="w-full h-full object-cover"
+              />
+            </div>
           ))}
         </div>
       </div>

@@ -9,6 +9,11 @@ import BurgessImg2 from "@/app/assets/bricklehurst-2.jpg";
 import BurgessImg3 from "@/app/assets/bricklehurst-3.jpg";
 import BurgessImg4 from "@/app/assets/bricklehurst-4.jpg";
 import BurgessImg5 from "@/app/assets/bricklehurst-5.jpg";
+import Napier1 from "@/app/assets/farnborough2.jpeg";
+import Napier2 from "@/app/assets/farnborough3.jpeg";
+import Hambrooke1 from "@/app/assets/hambrook.jpeg";
+import Hambrooke2 from "@/app/assets/hambrook2.jpeg";
+import Hambrooke3 from "@/app/assets/hambrook4.jpeg";
 
 const caseStudies = [
   {
@@ -30,25 +35,21 @@ const caseStudies = [
     title: "Hambrook School, Burgess Hill",
     description:
       "We worked very closely with West Sussex County Council to repurpose this former adult education facility into a high quality SEND school. The Property was then acquired from the Council, who benefited from the significant sale proceeds which were then re-invested elsewhere in the Borough. ",
-    images: [BurgessImg],
+    images: [BurgessImg, Hambrooke1, Hambrooke2, Hambrooke3],
   },
   {
     number: "3",
     title: "Napier School, Farnborough",
     description:
       "This former office was acquired in 2020 and Kalro oversaw a complicated planning process for change of use to a SEND school. The new facility opened in 2023 and now provides high quality and much needed education provision to over 50 children with autism other learning difficulties.  ",
-    images: [FarnboroughImg],
+    images: [FarnboroughImg, Napier1, Napier2],
   },
   {
     number: "4",
     title: "Stoneygate School, Leicester",
     description:
       "This former Montessori school had been vacant for 5 years, and was significantly dilapidated. The owner had considered residential conversion but hadn’t had any success. They got in touch with Kalro Education after a number of aborted sales, and we successfully acquired the site on behalf of an education operator. It is currently undergoing comprehensive refurbishment.",
-    images: [
-      StoneygateImg,
-      "/images/stoneygate-2.jpg",
-      "/images/stoneygate-3.jpg",
-    ],
+    images: [StoneygateImg],
   },
 ];
 
