@@ -49,7 +49,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section id="about-us" className="px-6 md:px-30 py-16">
+      <section id="about-us" className="px-10 md:px-30 py-16">
         <h2 className="text-3xl text-[#001C5A] font-semibold mb-10">
           ABOUT US
         </h2>
@@ -241,7 +241,7 @@ export default function Home() {
         <SuccessStory />
       </section>
       <section className=" bg-[#001C5A]  mt-20">
-        <div className="pl-[60px] md:pl-[160px] pb-20 pt-20  lg:pr-[150px] md:pr-[40px]">
+        <div className=" md:pl-[160px] pb-20 pt-20  lg:pr-[150px] md:pr-[40px]">
           <h2 className="font-semibold text-center text-white pb-12 text-[22px]">
             THE KALRO EDUCATION DIFFERENCE
           </h2>
