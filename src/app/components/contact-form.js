@@ -80,7 +80,7 @@ export default function ContactBanner() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto pb-20 px-6">
+    <div className="max-w-3xl pb-20 px-6">
       <h2 className="font-semibold pb-10 text-[22px] text-[#001C5A] ">
         CONTACT US TODAY
       </h2>
