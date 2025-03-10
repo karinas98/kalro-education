@@ -49,7 +49,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section id="about-us" className="px-10 md:px-30 py-16">
+      <section id="about-us" className="px-6 md:px-30 py-16">
         <h2 className="text-3xl text-[#001C5A] font-semibold mb-10">
           ABOUT US
         </h2>
@@ -278,7 +278,7 @@ export default function Home() {
           school.
         </h2>
       </section>
-      <section id="contact" className="pt-20 pl-[20px] lg:pl-[140px]">
+      <section id="contact" className="pt-20  lg:pl-[140px]">
         <ContactBanner />
       </section>
       <Footer />
