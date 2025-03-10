@@ -1,24 +1,23 @@
+"use server";
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
   try {
-    // ✅ Ensure the request body is correctly parsed
-    const body = await req.json(); // Parse JSON request body
-
+    const body = await req.json();
     const { full_name, email, message } = body;
 
     if (!full_name || !email || !message) {
       return Response.json(
-        { error: "All fields are required." },
+        { error: "Missing required fields." },
         { status: 400 }
       );
     }
 
-    // ✅ Configure Nodemailer Transport
+    // Setup transporter for Microsoft 365 (Office365)
     const transporter = nodemailer.createTransport({
-      host: "smtp.outlook.com", // Change for Outlook/Yahoo
+      host: "smtp.office365.com",
       port: 587,
-      secure: false,
+      secure: false, // STARTTLS
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
@@ -26,10 +25,17 @@ export async function POST(req) {
     });
 
     const mailOptions = {
-      from: `"Contact Form" <${process.env.EMAIL_USER}>`,
+      from: `"Kalro Education Website" <${process.env.EMAIL_USER}>`,
       to: "aubrey@kalro-education.com",
-      subject: `New Contact Form Submission`,
-      text: `Message from ${full_name}:\n\n${message}`,
+      replyTo: email, // Allow direct replies
+      subject: `New message from ${full_name}`,
+      html: `
+        <h3>New Contact Form Submission</h3>
+        <p><strong>Name:</strong> ${full_name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</h3>
+        <p>${message}</p>
+      `,
     };
 
     await transporter.sendMail(mailOptions);

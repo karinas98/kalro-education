@@ -23,7 +23,7 @@ export default function Home() {
             Helping Schools Build a <br /> Brighter Educational Future.
           </h1>
         </section>
-        <nav className="absolute top-10  lg:bottom-10 left-6 md:left-30 z-20 text-white font-light md:text-[18px] flex gap-6 md:gap-12">
+        <nav className="absolute bottom-60  lg:bottom-10 left-6 md:left-30 z-20 text-white font-light md:text-[18px] flex gap-6 md:gap-12">
           <Link href="#about-us">About Us</Link>
           <Link href="#case-study">Case Studies</Link>
           <Link href="#contact">Contact</Link>
