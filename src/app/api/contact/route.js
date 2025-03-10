@@ -27,9 +27,9 @@ export async function POST(req) {
 
     const mailOptions = {
       from: `"Contact Form" <${process.env.EMAIL_USER}>`,
-      to: "karina.savoie@new-way.ai",
+      to: "aubrey@kalro-education.com",
       subject: `New Contact Form Submission`,
-      text: `Message from ${first_name} ${last_name}:\n\n${message}`,
+      text: `Message from ${full_name}:\n\n${message}`,
     };
 
     await transporter.sendMail(mailOptions);
