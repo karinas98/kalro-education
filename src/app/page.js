@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/app/assets/kalro-logo.png";
 import HeroCarousel from "./components/hero-carousel";
-import LondonCity from "@/app/assets/city-london.jpeg";
+import AboutImg from "@/app/assets/about-img.jpeg";
 import CheckMark from "@/app/assets/icon-check.png";
 import CaseStudies from "./components/case-studies";
 import SuccessStory from "./components/case-highlight";
@@ -23,7 +23,7 @@ export default function Home() {
             Helping Schools Build a <br /> Brighter Educational Future.
           </h1>
         </section>
-        <nav className="absolute bottom-30  lg:bottom-10 left-6 md:left-30 z-20 text-white font-light md:text-[18px] flex gap-6 md:gap-12">
+        <nav className="absolute top-10  lg:bottom-10 left-6 md:left-30 z-20 text-white font-light md:text-[18px] flex gap-6 md:gap-12">
           <Link href="#about-us">About Us</Link>
           <Link href="#case-study">Case Studies</Link>
           <Link href="#contact">Contact</Link>
@@ -55,9 +55,9 @@ export default function Home() {
         </h2>
         <div className="flex flex-col md:flex-row gap-10">
           <Image
-            src={LondonCity}
-            alt="City Skyscraper"
-            className="rounded-lg w-full md:w-1/2"
+            src={AboutImg}
+            alt="School classroom"
+            className="rounded-lg w-full md:w-full"
           />
           <div>
             <h3 className="text-2xl font-semibold text-[#001C5A] mb-4">
