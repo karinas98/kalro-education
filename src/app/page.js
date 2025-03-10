@@ -19,19 +19,19 @@ export default function Home() {
           <Image src={logo} alt="Kalro Education Logo" width={250} />
         </div>
         <div className="relative z-20 flex flex-col">
-          <section className="h-screen flex flex-col justify-center px-[45px] md:pl-[150px]">
-            <h1 className="text-[52px] text-white  md:text-title font-light w-full md:w-[90%] lg:w-[65%] xl:text-[65px] ">
+          <section className="h-screen flex flex-col justify-center px-[25px] md:px-[45px] md:pl-[150px]">
+            <h1 className="md:text-[52px] text-[42px] text-white  md:text-title font-light w-full md:w-[90%] lg:w-[65%] xl:text-[65px] ">
               Helping Schools Build a <br />
               Brighter Educational Future.
             </h1>
           </section>
         </div>
-        <div className="absolute font-extralight text-[20px] text-white bottom-20 flex gap-20 left-[160px] z-20">
+        <div className="absolute font-extralight text-[20px] text-white bottom-20 flex gap-20 lg:left-[160px] z-20">
           <Link href="#about-us">About Us</Link>
           <Link href="#case-study">Case Studies</Link>
           <Link href="#contact">Contact</Link>
         </div>
-        <div className="absolute w-[620px] h-[190px] bg-white bottom-0 right-0 z-20">
+        <div className="absolute w-[400px] lg:w-[620px] h-[190px] bg-white bottom-0 right-0 z-20">
           <HeroCarousel className="z-10" />
         </div>
       </div>

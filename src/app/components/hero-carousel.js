@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import BricklehurstImg from "@/app/assets/bricklehurst-manor.jpg";
 import BurgessImg from "@/app/assets/burgess-hill.png";
 import FarnboroughImg from "@/app/assets/farnborough.jpeg";
@@ -6,6 +6,8 @@ import StoneygateImg from "@/app/assets/stoneygate-leicester.jpg";
 
 export default function HeroCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
 
   const slides = [
     {
@@ -38,11 +40,33 @@ export default function HeroCarousel() {
     setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
 
+  // Touch events for mobile swiping
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current - touchEndX.current > 50) {
+      nextSlide(); // Swipe left → next slide
+    }
+    if (touchStartX.current - touchEndX.current < -50) {
+      prevSlide(); // Swipe right → previous slide
+    }
+  };
+
   return (
     <div
       id="case-study-carousel"
-      className="relative flex h-full items-center pl-12  w-full max-w-4xl"
+      className="relative flex h-full items-center pl-12 w-full max-w-4xl"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
+      {/* Text Section */}
       <div className="w-55 pr-12">
         <h2 className="text-xl mb-2 font-semibold">
           {slides[currentIndex].title}
@@ -57,7 +81,7 @@ export default function HeroCarousel() {
 
       {/* Carousel Section */}
       <div className="relative w-50 flex items-center">
-        <div className="relative overflow-hidden ">
+        <div className="relative overflow-hidden">
           <img
             src={slides[currentIndex].image.src}
             className="block w-full transition-opacity duration-500"
@@ -65,10 +89,10 @@ export default function HeroCarousel() {
           />
         </div>
 
-        {/* Navigation Buttons */}
+        {/* Navigation Buttons (Visible Only on Desktop) */}
         <button
           type="button"
-          className="absolute -right-20 top-34 transform -translate-y-1/2 "
+          className="hidden lg:flex absolute right-0 bottom lg:-right-20 lg:top-34 transform -translate-y-1/2"
           onClick={prevSlide}
         >
           <svg
@@ -88,7 +112,7 @@ export default function HeroCarousel() {
         </button>
         <button
           type="button"
-          className="absolute -right-30 top-34 transform -translate-y-1/2  "
+          className="hidden lg:flex absolute -right-30 top-34 transform -translate-y-1/2"
           onClick={nextSlide}
         >
           <svg
