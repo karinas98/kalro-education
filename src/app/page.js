@@ -23,12 +23,12 @@ export default function Home() {
             Helping Schools Build a <br /> Brighter Educational Future.
           </h1>
         </section>
-        <nav className="absolute bottom-10 left-6 md:left-30 z-20 text-white font-light md:text-[18px] flex gap-6 md:gap-12">
+        <nav className="absolute bottom-30  lg:bottom-10 left-6 md:left-30 z-20 text-white font-light md:text-[18px] flex gap-6 md:gap-12">
           <Link href="#about-us">About Us</Link>
           <Link href="#case-study">Case Studies</Link>
           <Link href="#contact">Contact</Link>
         </nav>
-        <div className="absolute w-[90%] md:w-[500px] lg:w-[620px] h-[190px] bg-white bottom-0 right-0 z-20">
+        <div className="absolute md:w-[500px] lg:w-[620px] h-[190px] bg-white bottom-0 right-0 z-20">
           <HeroCarousel className="z-10" />
         </div>
       </div>
