@@ -1,5 +1,7 @@
+"use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useSwipeable } from "react-swipeable";
 import BurgessImg from "@/app/assets/burgess-hill.png";
 import FarnboroughImg from "@/app/assets/farnborough.jpeg";
 import StoneygateImg from "@/app/assets/stoneygate-leicester.jpg";
@@ -7,8 +9,6 @@ import BricklehurstImg from "@/app/assets/bricklehurst-manor.jpg";
 import BurgessImg1 from "@/app/assets/bricklehurst-1.jpg";
 import BurgessImg2 from "@/app/assets/bricklehurst-2.jpg";
 import BurgessImg3 from "@/app/assets/bricklehurst-3.jpg";
-import BurgessImg4 from "@/app/assets/bricklehurst-4.jpg";
-import BurgessImg5 from "@/app/assets/bricklehurst-5.jpg";
 import Napier1 from "@/app/assets/farnborough2.jpeg";
 import Napier2 from "@/app/assets/farnborough3.jpeg";
 import Hambrooke1 from "@/app/assets/hambrook.jpeg";
@@ -23,21 +23,14 @@ const caseStudies = [
     title: "Bricklehurst School, Wadhurst",
     description:
       "This former prep school was sourced by Kalro in May 2023 on behalf of a national SEND education provider. The building is listed and therefore listed building consent was required for the upgrading and refurbishment works. This was finally obtained in Jan 2024, and works were completed in July 2024.",
-    images: [
-      BricklehurstImg,
-      BurgessImg1,
-      BurgessImg2,
-      BurgessImg3,
-      BurgessImg4,
-      BurgessImg5,
-    ],
+    images: [BricklehurstImg, BurgessImg1, BurgessImg2, BurgessImg3],
   },
   {
     id: "hambrook",
     number: "2",
     title: "Hambrook School, Burgess Hill",
     description:
-      "We worked very closely with West Sussex County Council to repurpose this former adult education facility into a high quality SEND school. The Property was then acquired from the Council, who benefited from the significant sale proceeds which were then re-invested elsewhere in the Borough. ",
+      "We worked very closely with West Sussex County Council to repurpose this former adult education facility into a high quality SEND school. The Property was then acquired from the Council, who benefited from the significant sale proceeds which were then re-invested elsewhere in the Borough.",
     images: [BurgessImg, Hambrooke1, Hambrooke2, Hambrooke3, Hambrooke4],
   },
   {
@@ -45,7 +38,7 @@ const caseStudies = [
     number: "3",
     title: "Napier School, Farnborough",
     description:
-      "This former office was acquired in 2020 and Kalro oversaw a complicated planning process for change of use to a SEND school. The new facility opened in 2023 and now provides high quality and much needed education provision to over 50 children with autism other learning difficulties.  ",
+      "This former office was acquired in 2020 and Kalro oversaw a complicated planning process for change of use to a SEND school. The new facility opened in 2023 and now provides high quality and much needed education provision to over 50 children with autism and other learning difficulties.",
     images: [FarnboroughImg, Napier1, Napier2],
   },
   {
@@ -69,9 +62,22 @@ const CaseStudyCarousel = ({ images, title }) => {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: nextSlide,
+    onSwipedRight: prevSlide,
+    preventScrollOnSwipe: true,
+  });
+
   return (
-    <div className="relative w-full flex items-center justify-center">
-      <button onClick={prevSlide} className="absolute -left-20 z-10">
+    <div
+      {...handlers}
+      className="relative w-full flex items-center justify-center"
+    >
+      {/* Left Arrow (Desktop Only) */}
+      <button
+        onClick={prevSlide}
+        className="absolute -left-20 hidden lg:block z-10"
+      >
         <svg
           className="w-8 h-8 text-gray-700"
           xmlns="http://www.w3.org/2000/svg"
@@ -88,19 +94,23 @@ const CaseStudyCarousel = ({ images, title }) => {
         </svg>
       </button>
 
+      {/* Image Slide */}
       <div className="relative w-full">
         <Image
           src={images[currentIndex]}
           alt={`Slide ${currentIndex + 1}`}
-          className="w-full h-auto rounded-lg shadow-md"
+          className="w-full h-auto rounded-lg shadow-md transition-opacity duration-500"
         />
-        {/* Title Overlay */}
         <div className="absolute -bottom-4 -left-5 bg-blue-900 text-white px-8 py-4 rounded-full text-[16px] font-semibold">
           {title}
         </div>
       </div>
 
-      <button onClick={nextSlide} className="absolute -right-20 z-10">
+      {/* Right Arrow (Desktop Only) */}
+      <button
+        onClick={nextSlide}
+        className="absolute -right-20 hidden lg:block z-10"
+      >
         <svg
           className="w-8 h-8 text-gray-700"
           xmlns="http://www.w3.org/2000/svg"
@@ -131,14 +141,14 @@ const CaseStudies = () => {
           <div
             id={study.id}
             key={study.number}
-            className="flex items-start space-x-6"
+            className="flex flex-col md:flex-row gap-6 md:gap-12 items-start"
           >
             <span className="text-8xl font-extralight text-gray-300">
               {study.number}
             </span>
             <div className="flex-1">
               <CaseStudyCarousel images={study.images} title={study.title} />
-              <p className="mt-10 mb-10 text-gray-600 text-[18px] font-light">
+              <p className="mt-8 text-gray-600 text-[18px] font-light">
                 {study.description}
               </p>
             </div>

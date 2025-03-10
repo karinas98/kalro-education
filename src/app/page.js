@@ -234,7 +234,10 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className=" pr-[30px]  md:pr-[80px]  h-full pt-32 pb-32 md:pb-10">
+      <section
+        id="case-study"
+        className=" pr-[30px]  md:pr-[80px]  h-full pt-32 pb-32 md:pb-10"
+      >
         <CaseStudies />
       </section>
       <section className="pt-20 pl-[20px] pr-[20px] lg:pl-[160px]">
@@ -275,7 +278,7 @@ export default function Home() {
           school.
         </h2>
       </section>
-      <section className="pt-20 pl-[20px] lg:pl-[140px]">
+      <section id="contact" className="pt-20 pl-[20px] lg:pl-[140px]">
         <ContactBanner />
       </section>
       <Footer />
