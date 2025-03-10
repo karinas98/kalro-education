@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function ContactBanner() {
   const [formData, setFormData] = useState({
@@ -13,18 +13,6 @@ export default function ContactBanner() {
   const [statusType, setStatusType] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    const scriptId = "recaptcha-script";
-    if (!document.getElementById(scriptId)) {
-      const script = document.createElement("script");
-      script.id = scriptId;
-      script.src = `https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`;
-      script.async = true;
-      script.defer = true;
-      document.head.appendChild(script);
-    }
-  }, []);
-
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -33,26 +21,11 @@ export default function ContactBanner() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    if (!window.grecaptcha) {
-      setStatusMessage("reCAPTCHA failed to load. Please refresh the page.");
-      setStatusType("error");
-      setIsSubmitting(false);
-      return;
-    }
-
     try {
-      const recaptchaToken = await window.grecaptcha.execute(
-        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY,
-        { action: "submit" }
-      );
-
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          "g-recaptcha-response": recaptchaToken,
-        }),
+        body: JSON.stringify(formData),
       });
 
       if (response.ok) {

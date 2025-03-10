@@ -5,25 +5,11 @@ import "isomorphic-fetch";
 export async function POST(req) {
   try {
     const body = await req.json();
-    const {
-      full_name,
-      email,
-      message,
-      "g-recaptcha-response": recaptchaToken,
-    } = body;
+    const { full_name, email, message } = body;
 
-    if (!full_name || !email || !message || !recaptchaToken) {
+    if (!full_name || !email || !message) {
       return Response.json(
         { error: "All fields and reCAPTCHA are required." },
-        { status: 400 }
-      );
-    }
-
-    // ✅ Verify reCAPTCHA
-    const recaptchaValid = await verifyCaptcha(recaptchaToken);
-    if (!recaptchaValid) {
-      return Response.json(
-        { error: "reCAPTCHA verification failed." },
         { status: 400 }
       );
     }
@@ -72,19 +58,4 @@ export async function POST(req) {
     console.error("❌ Error:", error);
     return Response.json({ error: "Internal server error." }, { status: 500 });
   }
-}
-
-// ✅ reCAPTCHA verification function
-async function verifyCaptcha(token) {
-  const secret = process.env.RECAPTCHA_SECRET_KEY;
-  const response = await fetch(
-    "https://www.google.com/recaptcha/api/siteverify",
-    {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ secret, response: token }),
-    }
-  );
-  const data = await response.json();
-  return data.success && data.score > 0.5;
 }
