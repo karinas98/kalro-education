@@ -62,7 +62,7 @@ export default function HeroCarousel() {
   return (
     <div
       id="case-study-carousel"
-      className="relative flex h-full items-center pl-12 w-full max-w-4xl"
+      className="relative flex h-full items-center pl-2 md:pl-12 w-full max-w-4xl"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
