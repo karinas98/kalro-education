@@ -209,7 +209,7 @@ export default function Home() {
           </div>
           <div className="mt-10">
             <div className="flex items-center gap-10">
-              <hr className="w-18 md:w-40 border-[#001C5A]" />
+              <hr className="w-15 md:w-40 border-[#001C5A]" />
               <h3 className="text-[22px] font-semibold">
                 Fast & Reliable Transactions
               </h3>
