@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function ContactBanner() {
+export default function ContactForm() {
   const [formData, setFormData] = useState({
     full_name: "",
     email: "",
@@ -28,17 +28,18 @@ export default function ContactBanner() {
         body: JSON.stringify(formData),
       });
 
+      const responseData = await response.json();
+
       if (response.ok) {
-        setStatusMessage("Submitted! Thank you for your interest.");
+        setStatusMessage("Thank you! Your message has been sent.");
         setStatusType("success");
         setFormData({ full_name: "", email: "", message: "" });
       } else {
-        const errorData = await response.json();
-        setStatusMessage(`Error: ${errorData.error || "Submission failed"}`);
+        setStatusMessage(responseData.error || "Submission failed.");
         setStatusType("error");
       }
     } catch (error) {
-      setStatusMessage("Network error. Please try again.");
+      setStatusMessage("Error submitting form. Please try again.");
       setStatusType("error");
     }
 
@@ -50,14 +51,14 @@ export default function ContactBanner() {
       <h2 className="font-semibold pb-10 text-[22px] text-[#001C5A]">
         CONTACT US TODAY
       </h2>
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} method="POST" className="space-y-4">
         <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
           <input
             type="text"
             name="full_name"
             value={formData.full_name}
             onChange={handleChange}
-            placeholder="FULL NAME*"
+            placeholder="Full Name"
             required
             className="w-full p-4 bg-[#E9EDF4] rounded-lg text-[14px] text-[#001C5A]"
           />
@@ -66,7 +67,7 @@ export default function ContactBanner() {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="EMAIL*"
+            placeholder="Email"
             required
             className="w-full p-4 bg-[#E9EDF4] rounded-lg text-[14px] text-[#001C5A]"
           />
@@ -75,7 +76,7 @@ export default function ContactBanner() {
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="MESSAGE*"
+          placeholder="Your Message"
           required
           className="w-full p-4 bg-[#E9EDF4] rounded-lg text-[14px] text-[#001C5A] h-40"
         />
