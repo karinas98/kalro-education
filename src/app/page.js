@@ -27,13 +27,13 @@ export default function Home() {
           <Link href="#case-study">Case Studies</Link>
           <Link href="#contact">Contact</Link>
         </nav>
-        <div className="absolute md:w-[500px] lg:w-[620px] h-[190px] bg-white bottom-0 right-0 z-20">
+        <div className="absolute w-full md:w-[500px] lg:w-[620px] h-[190px] bg-white bottom-0 right-0 z-20">
           <HeroCarousel className="z-10" />
         </div>
       </div>
 
       <section className="px-6 md:px-30 py-16">
-        <p className="text-lg w-1/2 md:text-xl font-light">
+        <p className="text-lg w-full md:w-1/2 md:text-xl font-light">
           Kalro Education is a specialist UK-based education consultancy that
           works closely with Local Authorities, Dioceses and Education Providers
           to help them increase their education provision in areas where it is
@@ -209,7 +209,7 @@ export default function Home() {
           </div>
           <div className="mt-10">
             <div className="flex items-center gap-10">
-              <hr className="w-20 md:w-40 border-[#001C5A]" />
+              <hr className="w-10 md:w-40 border-[#001C5A]" />
               <h3 className="text-[22px] font-semibold">
                 Fast & Reliable Transactions
               </h3>
@@ -226,7 +226,7 @@ export default function Home() {
                 Sustainable & Community-Focused Developments
               </h3>
             </div>
-            <p className="pl-[90px] lg:pl-[200px] font-light text-[18px]">
+            <p className="pl-[85px] lg:pl-[200px] font-light text-[18px]">
               Our projects create meaningful impact by supporting students,
               communities, and long-term education growth.
             </p>
