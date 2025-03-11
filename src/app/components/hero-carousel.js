@@ -68,7 +68,7 @@ export default function HeroCarousel() {
       onTouchEnd={handleTouchEnd}
     >
       {/* Text Section */}
-      <div className="w-55 pr-2 md:pr-12">
+      <div className=" w-45 md:w-55 pr-2 md:pr-12">
         <h2 className="text-xl mb-2 font-semibold">
           {slides[currentIndex].title}
         </h2>
