@@ -34,7 +34,7 @@ export default function Home() {
       </div>
 
       <section className="px-6 md:px-30 py-16">
-        <p className="text-lg md:text-xl font-light">
+        <p className="text-lg w-1/2 md:text-xl font-light">
           Kalro Education is a specialist UK-based education consultancy that
           works closely with Local Authorities, Dioceses and Education Providers
           to help them increase their education provision in areas where it is

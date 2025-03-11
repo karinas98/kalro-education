@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import BricklehurstImg from "@/app/assets/bricklehurst-manor.jpg";
-import BurgessImg from "@/app/assets/burgess-hill.png";
+import BurgessImg from "@/app/assets/burgess-hill-2.jpeg";
 import FarnboroughImg from "@/app/assets/farnborough.jpeg";
 import StoneygateImg from "@/app/assets/stoneygate-leicester.jpg";
 import Image from "next/image";
