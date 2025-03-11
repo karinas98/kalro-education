@@ -7,7 +7,6 @@ import AboutImg from "@/app/assets/about-img.jpeg";
 import CheckMark from "@/app/assets/icon-check.png";
 import CaseStudies from "./components/case-studies";
 import SuccessStory from "./components/case-highlight";
-import ContactBanner from "./components/contact-form";
 import Footer from "./components/footer";
 
 export default function Home() {
@@ -278,9 +277,7 @@ export default function Home() {
           school.
         </h2>
       </section>
-      <section id="contact" className="pt-20  lg:pl-[140px]">
-        <ContactBanner />
-      </section>
+
       <Footer />
     </main>
   );
