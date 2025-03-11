@@ -62,19 +62,19 @@ export default function HeroCarousel() {
   return (
     <div
       id="case-study-carousel"
-      className="relative flex h-full flex-col md:flex-row items-center pl-2 md:pl-12 w-full max-w-4xl"
+      className="relative flex h-full  items-center pl-2 md:pl-12 w-full max-w-4xl"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
       {/* Text Section */}
       <div className=" w-45 md:w-55 pr-2  md:pr-12">
-        <h2 className="text-xl mb-2 font-semibold">
+        <h2 className="text-lg md:text-xl mb-2 font-semibold">
           {slides[currentIndex].title}
         </h2>
         <a
           href={slides[currentIndex].link}
-          className="text-[18px] font-extralight"
+          className=" text-[16px] md:text-[18px] font-extralight"
         >
           See Case Study
         </a>

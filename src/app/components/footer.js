@@ -8,7 +8,7 @@ const Footer = () => {
 
       <div className="flex pl-[20px] flex-col lg:pl-[80px] space-x-4">
         <Image src={Logo} alt="Kalro Education Logo" width={250} />
-        <p className="text-[16px] font-light">
+        <p className="text-[16px] text-center md:text-left font-light">
           <a href="mailto:krish@kalrocapital.com" className="hover:underline">
             krish@kalrocapital.com
           </a>
