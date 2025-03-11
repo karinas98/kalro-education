@@ -131,7 +131,7 @@ const CaseStudyCarousel = ({ images, title }) => {
 
 const CaseStudies = () => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
+    <div className="max-w-4xl md:mx-auto px-4 py-10">
       <h2 className="font-semibold mb-6 text-[#001C5A] text-[22px]">
         CASE STUDIES
       </h2>
