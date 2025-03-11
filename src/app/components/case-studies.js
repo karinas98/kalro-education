@@ -100,7 +100,7 @@ const CaseStudyCarousel = ({ images, title }) => {
           alt={`Slide ${currentIndex + 1}`}
           className="w-full h-auto rounded-lg shadow-md transition-opacity duration-500"
         />
-        <div className="absolute -bottom-8 -left-5 md:-bottom-4 md:-left-5 bg-blue-900 text-white px-4 py-4 rounded-full text-[16px] font-semibold">
+        <div className="absolute -bottom-8 -left-3 md:-bottom-4 md:-left-5 bg-blue-900 text-white px-4 py-4 rounded-full text-[16px] font-semibold">
           {title}
         </div>
       </div>
@@ -147,7 +147,7 @@ const CaseStudies = () => {
             </span>
             <div className="flex-1">
               <CaseStudyCarousel images={study.images} title={study.title} />
-              <p className="mt-8 text-gray-600 text-[18px] font-light">
+              <p className="mt-10 text-gray-600 text-[18px] font-light">
                 {study.description}
               </p>
             </div>
