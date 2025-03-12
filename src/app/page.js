@@ -277,8 +277,9 @@ export default function Home() {
           school.
         </h2>
       </section>
-
-      <Footer />
+      <section id="contact">
+        <Footer />
+      </section>
     </main>
   );
 }
